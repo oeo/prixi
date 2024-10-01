@@ -1,8 +1,8 @@
 <img src="readme.svg" height="150"/>
 
-# prixi
-
 > pov: you want to be logged into gmail but not fkn google.com. in fact you wish you were never automatically logged in while using google.com.
+
+# prixi
 
 prixi offers a way to search on google while focusing on privacy. it's a proxy that cuts out the tracking and junk from search results.
 
