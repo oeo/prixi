@@ -28,44 +28,40 @@ docker build -t prixi .
 docker run -p 9001:9001 -e TARGET_URL=https://www.google.com -e LOCAL_HOSTNAME=localhost prixi
 ```
 
-tune it with environment variables:
+or, even easier, use docker compose:
 
+```bash
+docker-compose up --build
+```
+
+tune it with environment variables in your .env file or by setting them in the docker-compose.yml:
+
+```markdown
 - `TARGET_URL`: url you're proxying; defaults to https://www.google.com
 - `LOCAL_PROTOCOL`: server protocol; defaults to http
 - `LOCAL_HOSTNAME`: server hostname; defaults to localhost
 - `LOCAL_PORT`: server port; defaults to 9001
 - `PROXY_PORT`: proxy server port; defaults to 9001
+```
 
-### tampermonkey userscript
+### local development
 
-there's a tampermonkey script that gives you even more control on the browser side.
+to run prixi locally:
 
-#### tampermonkey 101
+1. clone the repo
+1. run `nvm use`
+1. run `npm install`
+1. create a .env file based on .env.example
+1. run `npm start`
 
-it's a browser extension that lets you run custom js on websites.
-
-#### what the prixi script does
-
-1. strips extra fluff from your search results page
-2. swaps the google logo for something custom
-3. adjusts links to keep your browsing in the prixi zone
-4. enhances page style for better legibility
-
-#### to set up the script
-
-1. install tampermonkey in your browser
-2. create a new script in the extension
-3. grab the script from tampermonkey/userscript.js and copy it over
-4. save and let it run automatically when you use prixi (like visiting http://localhost:9001)
+prixi should now be running at http://localhost:9001 (or whatever port you specified)
 
 ## pitch in
 
-got tweaks or fixes for prixi? throw in a pull request or flag an issue.
+got tweaks or fixes for prixi? awesome! here's how to get started:
 
-## the legal bit
+1. fork the repo
+1. create a new branch for your feature
+1. make your changes
+1. submit a pull request
 
-it's under mit license.
-
-## heads up
-
-just keep in mind prixi is a teaching tool. get too crafty with proxies and altering search results and you might step on google's terms. be wise.
