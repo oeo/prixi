@@ -91,7 +91,7 @@ to install prixi as an lxc container on proxmox:
 this will create a new lxc container, install all necessary dependencies, and set up prixi to run as a service.
 
 ## @todo
-[ ] - http proxy configuration
+- [ ] http proxy configuration
 
 ## contrib
 
