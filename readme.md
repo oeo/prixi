@@ -23,16 +23,18 @@ it sits between you and google, sending out your search, cleaning up the respons
 
 to run prixi with docker, these commands should do the trick:
 
+```bash
 docker build -t prixi .
 docker run -p 9001:9001 -e TARGET_URL=https://www.google.com -e LOCAL_HOSTNAME=localhost prixi
+```
 
 tune it with environment variables:
 
-- TARGET_URL: url you're proxying; defaults to https://www.google.com
-- LOCAL_PROTOCOL: server protocol; defaults to http
-- LOCAL_HOSTNAME: server hostname; defaults to localhost
-- LOCAL_PORT: server port; defaults to 9001
-- PROXY_PORT: proxy server port; defaults to 9001
+- `TARGET_URL`: url you're proxying; defaults to https://www.google.com
+- `LOCAL_PROTOCOL`: server protocol; defaults to http
+- `LOCAL_HOSTNAME`: server hostname; defaults to localhost
+- `LOCAL_PORT`: server port; defaults to 9001
+- `PROXY_PORT`: proxy server port; defaults to 9001
 
 ### tampermonkey userscript
 
