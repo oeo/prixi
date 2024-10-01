@@ -6,5 +6,4 @@ services:
       - "9001:9001"
     env_file:
       - .env
-      - /etc/prixi/prixi.conf
     restart: unless-stopped

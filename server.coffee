@@ -1,5 +1,17 @@
-require('dotenv').config({ path: '/etc/prixi/prixi.conf' })
-require('dotenv').config()
+fs = require 'fs'
+dotenv = require 'dotenv'
+
+loadConfig = ->
+  if fs.existsSync('/etc/prixi/prixi.conf')
+    dotenv.config({ path: '/etc/prixi/prixi.conf' })
+  else if fs.existsSync('.env')
+    dotenv.config()
+  else if fs.existsSync('.env.example')
+    dotenv.config({ path: '.env.example' })
+  else
+    console.warn 'No configuration file found. Using default values.'
+
+loadConfig()
 
 { log } = console
 { env } = process
