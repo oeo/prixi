@@ -1,4 +1,4 @@
-<img src="readme.svg" height="100"/>
+<img src="readme.svg" height="150"/>
 
 # prixi
 
@@ -14,7 +14,7 @@ prixi offers a way to search on google while focusing on privacy. it's a proxy t
 it sits between you and google, sending out your search, cleaning up the response, and then passing it back to you sans trackers and clutter.
 
 <center>
-  <img src="readme2.png" height="400"/>
+  <img src="readme.png" height="400"/>
 </center>
 
 ## set up & how to use
