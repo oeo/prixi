@@ -46,6 +46,28 @@ tune it with environment variables in your .env file or by setting them in the d
 - `PROXY_PORT`: proxy server port; defaults to 9001
 ```
 
+### configuration
+
+prixi uses two configuration files:
+
+1. `.env` in the project root directory for default settings.
+1. `/etc/prixi/prixi.conf` for system-wide overrides.
+
+to change settings, edit `/etc/prixi/prixi.conf`. this file will override any settings in `.env`.
+
+example `/etc/prixi/prixi.conf`:
+
+```bash
+TARGET_URL=https://www.duckduckgo.com
+LOCAL_HOSTNAME=prixi.local
+```
+
+after changing the configuration, restart the service:
+
+```bash
+systemctl restart prixi
+```
+
 ### local development
 
 to run prixi locally:
@@ -58,7 +80,20 @@ to run prixi locally:
 
 prixi should now be running at http://localhost:9001 (or whatever port you specified)
 
-## pitch in
+## proxmox lxc installation
+
+to install prixi as an lxc container on proxmox:
+
+1. copy `proxmox-lxc-setup.sh`, `install.sh`, and `prixi.service` to your proxmox host.
+1. make the scripts executable: `chmod +x proxmox-lxc-setup.sh install.sh`
+1. run the proxmox lxc setup script: `./proxmox-lxc-setup.sh`
+
+this will create a new lxc container, install all necessary dependencies, and set up prixi to run as a service.
+
+## @todo
+[ ] - http proxy configuration
+
+## contrib
 
 got tweaks or fixes for prixi? awesome! here's how to get started:
 
@@ -66,7 +101,4 @@ got tweaks or fixes for prixi? awesome! here's how to get started:
 1. create a new branch for your feature
 1. make your changes
 1. submit a pull request
-
-## todo
-proxy configuration
 

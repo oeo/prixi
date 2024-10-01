@@ -1,3 +1,4 @@
+require('dotenv').config({ path: '/etc/prixi/prixi.conf' })
 require('dotenv').config()
 
 { log } = console

@@ -1,5 +1,5 @@
 [Unit]
-Description=Prixi Reverse Google Proxy
+Description=Prixi Privacy Proxy
 After=docker.service
 Requires=docker.service
 
@@ -9,7 +9,7 @@ ExecStart=/usr/local/bin/docker-compose up
 ExecStop=/usr/local/bin/docker-compose down
 Restart=always
 User=root
+EnvironmentFile=/etc/prixi/prixi.conf
 
 [Install]
 WantedBy=multi-user.target
-
