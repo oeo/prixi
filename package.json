@@ -1,6 +1,6 @@
 {
   "name": "prixi",
-  "description": "privacy-enhancing Google search proxy with ad and tracker removal",
+  "description": "privacy-enhancing google search proxy with ad and tracker removal",
   "version": "1.0.0",
   "main": "server.coffee",
   "license": "MIT",
