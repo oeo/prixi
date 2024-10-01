@@ -12,3 +12,4 @@ services:
       - PROXY_PORT=${PROXY_PORT:-9001}
     env_file:
       - .env
+    restart: unless-stopped
