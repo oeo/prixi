@@ -92,6 +92,7 @@ this will create a new lxc container, install all necessary dependencies, and se
 
 ## @todo
 - [ ] http proxy configuration
+- [ ] embed userscript into proxy response instead of using tampermonkey
 
 ## contrib
 
