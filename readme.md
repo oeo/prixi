@@ -6,7 +6,7 @@
 
 prixi offers a way to search on google while focusing on privacy. it's a proxy that cuts out the tracking and junk from search results.
 
-- handles google search requests privately
+- handles google search requests privately (kind of)
 - gets rid of ads and tracking from search results
 - tweakable with environment variables
 - comes with a tampermonkey script for more client-side tweaks
@@ -66,4 +66,7 @@ got tweaks or fixes for prixi? awesome! here's how to get started:
 1. create a new branch for your feature
 1. make your changes
 1. submit a pull request
+
+## todo
+proxy configuration
 
