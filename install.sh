@@ -36,13 +36,23 @@ apt-get install -y curl git
 curl -fsSL https://deb.nodesource.com/setup_20.x | bash -
 apt-get install -y nodejs
 
-# install docker
-curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
+# check if docker is already installed
+if command -v docker &> /dev/null; then
+    echo "docker is already installed. skipping docker installation."
+else
+    echo "installing docker..."
+    curl -fsSL https://get.docker.com -o get-docker.sh
+    sh get-docker.sh
+fi
 
-# install docker compose
-curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+# check if docker-compose is already installed
+if command -v docker-compose &> /dev/null; then
+    echo "docker-compose is already installed. skipping docker-compose installation."
+else
+    echo "installing docker-compose..."
+    curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+    chmod +x /usr/local/bin/docker-compose
+fi
 
 # clone the prixi repository
 git clone https://github.com/oeo/prixi /opt/prixi
@@ -67,4 +77,3 @@ systemctl enable prixi
 systemctl start prixi
 
 echo "prixi installation complete!"
-
