@@ -75,24 +75,14 @@ to run prixi locally:
 1. clone the repo
 1. run `nvm use`
 1. run `npm install`
-1. create a .env file based on .env.example
+1. create a .env file based on .env.example (optional)
 1. run `npm start`
 
 prixi should now be running at http://localhost:9001 (or whatever port you specified)
 
-## proxmox lxc installation
-
-to install prixi as an lxc container on proxmox:
-
-1. copy `proxmox-lxc-setup.sh`, `install.sh`, and `prixi.service` to your proxmox host.
-1. make the scripts executable: `chmod +x proxmox-lxc-setup.sh install.sh`
-1. run the proxmox lxc setup script: `./proxmox-lxc-setup.sh`
-
-this will create a new lxc container, install all necessary dependencies, and set up prixi to run as a service.
-
 ## @todo
-- [ ] http proxy configuration
-- [ ] embed userscript into proxy response instead of using tampermonkey
+- [ ] http proxy integration
+- [ ] embed userscript into server
 
 ## contrib
 
