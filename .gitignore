@@ -42,3 +42,4 @@ yarn-lock.json
 *.7z
 *.rar
 
+.http-mitm-proxy
